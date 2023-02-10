@@ -18,11 +18,17 @@ return new class extends Migration
             $table->string('name');
             $table->text('code_name');
             $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('category_id');
 
             $table->foreign('user_id')
                 ->references('id')
                 ->on('users')
                 ->onDelete('cascade'); // relacionamos las tablas files y users 
+                
+            $table->foreign('category_id')
+                ->references('id')
+                ->on('categories')
+                ->onDelete('cascade'); // relacionamos las tablas files y categories 
 
             $table->timestamps();
         });

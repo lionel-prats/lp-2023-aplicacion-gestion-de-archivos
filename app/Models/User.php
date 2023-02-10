@@ -41,4 +41,9 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    # Relación de muchos a muchos entre User y Category
+    public function categories(){
+        return $this->belongsToMany(Category::class);
+    }
 }

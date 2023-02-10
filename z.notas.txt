@@ -1,0 +1,4 @@
+php artisan make:model Category -m
+php artisan make:migration create_user_category_table  
+
+
